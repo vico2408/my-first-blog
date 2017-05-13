@@ -6,17 +6,13 @@
         <div>
             <h1><a href="">Vico's Blog</a></h1>
         </div>
+        {% for post in posts %}
 
         <div>
-            <p>published: 13.05.2017, 12:14</p>
-            <h2><a href="">Posteando por primera vez</a></h2>
-            <p>Too much coding makes Vico go crazy!</p>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Mi segundo post</a></h2>
-            <p>Hola a todos! sigamos pythoneando!</p>
-        </div>
+        {% endfor %}
     </body>
 </html>
